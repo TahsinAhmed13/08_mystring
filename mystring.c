@@ -44,17 +44,14 @@ char *mystrchr(char *s, int c)
 
 int mystrcmp(char *s1, char *s2)
 {
-    int i = 0; 
-    while(*s1) 
+    while(*s1 && *s2)
     {
-        i += *s1; 
+        if(*s1 > *s2)       return 1; 
+        else if(*s1 < *s2)  return -1; 
         ++s1; 
-    }
-    int j = 0; 
-    while(*s2) 
-    {
-        j += *s2; 
         ++s2; 
     }
-    return i - j; 
+    if(!*s1 && !*s2)    return 0; 
+    else if(!*s2)       return 1; 
+    else                return -1; 
 }
