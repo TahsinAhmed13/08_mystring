@@ -23,6 +23,31 @@ char *mystrcpy(char *s1, char *s2)
     return foo; 
 }
 
+char *mystrncpy(char *s1, char *s2, int size)
+{
+    char *foo = s1; 
+    for(int i = 0; i < size && *s2; ++i)
+    {
+        *s1 = *s2; 
+        ++s1; 
+        ++s2; 
+    }
+    return foo; 
+}
+
+char *mystrcat(char *s1, char *s2)
+{
+    char *foo = s1; 
+    s1 += mystrlen(s1); 
+    while(*s2)
+    {
+        *s1 = *s2; 
+        ++s1; 
+        ++s2; 
+    }
+    return foo; 
+}
+
 char *mystrncat(char *s1, char *s2, int size)
 {
     char *foo = s1; 
